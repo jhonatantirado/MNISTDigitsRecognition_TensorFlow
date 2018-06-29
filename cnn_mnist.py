@@ -137,12 +137,12 @@ def main(unused_argv):
   train_input_fn = tf.estimator.inputs.numpy_input_fn(
       x={"x": train_data},
       y=train_labels,
-      batch_size=100,
+      batch_size=10,
       num_epochs=None,
       shuffle=True)
   mnist_classifier.train(
       input_fn=train_input_fn,
-      steps=20000,
+      steps=1000,
       hooks=[logging_hook])
 
   # Evaluate the model and print results
